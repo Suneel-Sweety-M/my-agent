@@ -1,0 +1,413 @@
+.hero {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Slider */
+
+.hero__slider-wrapper,
+.hero__slider,
+.hero__slide {
+  height: 100%;
+}
+
+.hero__slider {
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.hero__slider::-webkit-scrollbar {
+  display: none;
+}
+
+.hero__slide {
+  min-width: 100%;
+  position: relative;
+}
+
+.hero__slide img {
+  object-fit: cover;
+}
+
+/* Overlay */
+
+.hero__overlay {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  transform: translateY(-50%);
+  max-width: 650px;
+  color: #000;
+}
+
+.hero__overlay h1 {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--secondary);
+}
+
+.hero__overlay h2 {
+  font-size: 40px;
+  font-weight: 600;
+  margin-top: 12px;
+  color: var(--blue);
+}
+
+.hero__overlay p {
+  margin-top: 14px;
+  font-size: 18px;
+  opacity: 0.95;
+}
+
+.hero__overlay button {
+  margin-top: 22px;
+  padding: 14px 28px;
+  background: var(--primary);
+  color: #fff;
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+
+/* Nav buttons */
+
+.hero__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+}
+
+.hero__nav.left {
+  left: 20px;
+}
+.hero__nav.right {
+  right: 20px;
+}
+
+/* Dots */
+
+.hero__dots {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.dot.active {
+  width: 20px;
+  border-radius: 30px;
+  background: var(--primary);
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 1024px) {
+  .hero__overlay h1 {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero__overlay {
+    left: 6%;
+    right: 6%;
+  }
+
+  .hero__overlay h1 {
+    font-size: 28px;
+  }
+
+  .hero__overlay p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    height: 38vh;
+  }
+
+  .hero__overlay {
+    top: 50%;
+    left: 22%;
+    transform: translateY(-50%);
+  }
+
+  .hero__overlay h1 {
+    font-size: 22px;
+  }
+
+  .hero__overlay h2 {
+    font-size: 20px;
+  }
+
+  .hero__overlay button {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+}
+
+/* ===============================
+   SERVICES SECTION
+================================ */
+
+.services {
+  background: linear-gradient(to bottom, #ffffff, #f6fbf7);
+  padding: 80px 0;
+}
+
+.services__container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+/* ===============================
+   TITLE
+================================ */
+
+.services__title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1c4d1f;
+  margin-bottom: 50px;
+}
+
+/* ===============================
+   GRID
+================================ */
+
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+/* ===============================
+   CARD
+================================ */
+
+.service-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 26px 20px 30px;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+
+.service-card__image {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.service-card__title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1e3b1f;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 1024px) {
+  .services__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .services {
+    padding: 60px 0;
+  }
+
+  .services__title {
+    font-size: 24px;
+    margin-bottom: 36px;
+  }
+
+  .services__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 400px) {
+  .service-card {
+    width: 100%;
+    padding: 20px 16px 24px;
+  }
+}
+
+/* ===============================
+   SAFETY CTA SECTION
+================================ */
+
+.safety {
+  background: linear-gradient(to right, #e9f7f0, #f7fff9);
+  padding: 60px 0;
+}
+
+.safety__container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 20px;
+
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+/* ===============================
+   IMAGE
+================================ */
+
+.safety__image {
+  flex-shrink: 0;
+}
+
+/* ===============================
+   CONTENT
+================================ */
+
+.safety__content h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1c4d1f;
+  margin-bottom: 16px;
+}
+
+/* ===============================
+   LIST
+================================ */
+
+.safety__list {
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.safety__list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  color: #1f3d1f;
+  margin-bottom: 10px;
+}
+
+.safety__list svg {
+  color: #1e8e3e;
+  font-size: 18px;
+}
+
+/* ===============================
+   CONTACT
+================================ */
+
+.safety__contact {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 22px;
+  font-weight: 700;
+  color: #1e8e3e;
+  margin-bottom: 16px;
+}
+
+.safety__contact .whatsapp {
+  font-size: 26px;
+}
+
+/* ===============================
+   SOCIALS
+================================ */
+
+.safety__socials {
+  display: flex;
+  gap: 12px;
+}
+
+.safety__socials a {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-sm);
+  color: #1e8e3e;
+  transition: transform 0.2s ease;
+}
+
+.safety__socials a:hover {
+  transform: translateY(-3px);
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 900px) {
+  .safety__container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .safety__list li {
+    justify-content: center;
+  }
+
+  .safety__contact {
+    justify-content: center;
+  }
+
+  .safety__socials {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .safety__content h2 {
+    font-size: 22px;
+  }
+
+  .safety__contact {
+    font-size: 18px;
+  }
+}

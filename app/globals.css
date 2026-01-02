@@ -1,26 +1,91 @@
-@import "tailwindcss";
+/* ===============================
+   GLOBAL RESET & VARIABLES
+================================ */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  /* Brand Colors (from design) */
+  --primary: #1f8f4c;        /* green */
+  --primary-light: #e8f6ee;
+  --secondary: #f58220;      /* orange */
+  --blue: #1e88e5;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  /* Neutral Colors */
+  --white: #ffffff;
+  --text-dark: #1b1b1b;
+  --text-muted: #5f6b7a;
+  --border-soft: #e5eaf0;
+  --bg-soft: #f7fbff;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Typography */
+  --font-sans: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+
+  /* Layout */
+  --container-width: 1200px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+
+  /* Shadows */
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.08);
+
+  --navbar-height: 72px;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  /* font-family: var(--font-sans); */
+  font-family: "Poppins", sans-serif;
+  color: var(--text-dark);
+  background: linear-gradient(
+    to bottom,
+    #ffffff 0%,
+    var(--bg-soft) 100%
+  );
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===============================
+   BASIC UTILITIES (SAFE TO USE)
+================================ */
+
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section {
+  padding: 64px 0;
+}
+
+.card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
